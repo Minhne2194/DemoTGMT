@@ -18,8 +18,9 @@
                         <label for="plantImage" class="form-label">Choose plant image:</label>
                         <input class="form-control" type="file" id="plantImage" accept="image/*">
                     </div>
+                    <!-- Canh giữa hình ảnh xem trước -->
                     <div class="mb-3 text-center">
-                        <img id="previewImage" src="#" alt="Image Preview" class="img-fluid" style="max-width: 300px; display: none;">
+                        <img id="previewImage" src="#" alt="Image Preview" class="img-fluid mx-auto d-block" style="max-width: 300px; display: none;">
                     </div>
                     <div class="d-grid gap-2">
                         <button type="button" class="btn btn-primary" onclick="submitImage()">Submit</button>
@@ -47,7 +48,7 @@
 
         function submitImage() {
             alert('Image submitted successfully!');
-            // You can add further code here to handle image upload and detection
+            // Thêm logic xử lý hình ảnh ở đây
         }
     </script>
 
