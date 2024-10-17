@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center">Plant Disease Detection</h1>
+        <p class="text-center">Upload an image of your plant to detect diseases</p>
+
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="plantImage" class="form-label">Choose plant image:</label>
+                        <input class="form-control" type="file" id="plantImage" accept="image/*">
+                    </div>
+                    <div class="mb-3 text-center">
+                        <img id="previewImage" src="#" alt="Image Preview" class="img-fluid" style="max-width: 300px; display: none;">
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="button" class="btn btn-primary" onclick="submitImage()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const plantImageInput = document.getElementById('plantImage');
+        const previewImage = document.getElementById('previewImage');
+
+        plantImageInput.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    previewImage.src = event.target.result;
+                    previewImage.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        function submitImage() {
+            alert('Image submitted successfully!');
+            // You can add further code here to handle image upload and detection
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
